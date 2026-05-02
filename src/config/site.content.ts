@@ -2,30 +2,30 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Independent news desk',
+    tagline: 'Distribute your news everywhere',
   },
   footer: {
-    tagline: 'Simple publishing for press-style updates',
+    tagline: 'Reach millions online and via traditional media',
   },
   hero: {
-    badge: 'Latest updates',
-    title: ['Clear publishing, simple reading, no extra noise.'],
+    badge: 'Press Release Distribution',
+    title: ['Distribute your news everywhere'],
     description:
-      'A minimal article-style publishing template built for regular updates, announcements, and media distribution posts.',
+      'Reach millions online and via traditional media with our comprehensive press release distribution platform.',
     primaryCta: {
-      label: 'Browse latest posts',
-      href: '/updates',
-    },
-    secondaryCta: {
-      label: 'Contact us',
+      label: 'Submit Press Release',
       href: '/contact',
     },
-    searchPlaceholder: 'Search posts',
+    secondaryCta: {
+      label: 'Post Your Profile',
+      href: '/contact',
+    },
+    searchPlaceholder: 'Search press releases',
     focusLabel: 'Latest',
-    featureCardBadge: 'editor note',
-    featureCardTitle: 'Recent updates appear directly on the homepage.',
+    featureCardBadge: 'media distribution',
+    featureCardTitle: 'Boost your business with strategic press release distribution.',
     featureCardDescription:
-      'The homepage works as a clean front page so new posts stay visible without decorative sections getting in the way.',
+      'Get your news in front of journalists, media outlets, and millions of potential customers worldwide.',
   },
   home: {
     metadata: {
