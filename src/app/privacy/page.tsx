@@ -2,24 +2,25 @@
 import Image from "next/image";
 import { ArrowRight, Shield, Database, Eye, Lock, Settings } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
+import { Footer } from "@/components/shared/footer";
 
 export default function PrivacyPage() {
   const sections = [
     {
       title: "Data We Collect",
-      body: "Account information, usage analytics, and content you submit. We collect only the information necessary to provide our press release distribution services.",
+      body: "Account information, usage analytics, and content you submit. We collect only the information necessary to provide our press media distribution services.",
       details: [
         "Account registration information (name, email, company)",
-        "Press release content and distribution preferences",
+        "Press media content and distribution preferences",
         "Usage analytics and platform interaction data",
         "Payment and billing information for paid services"
       ]
     },
     {
       title: "How We Use Data",
-      body: "To personalize your experience, improve search, and keep the platform secure. Your data helps us provide better press release distribution services.",
+      body: "To personalize your experience, improve search, and keep the platform secure. Your data helps us provide better press media distribution services.",
       details: [
-        "Process and distribute your press releases",
+        "Process and distribute your press media",
         "Provide customer support and service improvements",
         "Analyze platform usage to enhance features",
         "Ensure security and prevent fraudulent activities"
@@ -27,9 +28,9 @@ export default function PrivacyPage() {
     },
     {
       title: "Data Sharing",
-      body: "We share your press releases with media outlets and distribution partners as part of our service. We do not sell your personal information.",
+      body: "We share your press media with media outlets and distribution partners as part of our service. We do not sell your personal information.",
       details: [
-        "Press releases are shared with approved media partners",
+        "Press media are shared with approved media partners",
         "Analytics data may be shared in aggregate form",
         "We comply with legal requests for information",
         "Third-party service providers have limited access"
@@ -79,7 +80,7 @@ export default function PrivacyPage() {
                 Privacy Policy
               </h1>
               <p className="mt-6 text-lg leading-8 text-red-100">
-                How we collect, use, and protect your information on Xyntraa's press release distribution platform.
+                How we collect, use, and protect your information on Xyntraa's press media distribution platform.
               </p>
               <div className="mt-8">
                 <Link 
@@ -174,6 +175,7 @@ export default function PrivacyPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

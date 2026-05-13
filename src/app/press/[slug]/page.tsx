@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Calendar, Tag, Globe, Share2, Bookmark } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
+import { Footer } from "@/components/shared/footer";
 import { notFound } from "next/navigation";
 
 // Function to generate URL-friendly slugs
@@ -156,7 +157,7 @@ export default async function PressReleasePage({ params }: PressReleasePageProps
               className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to Press Releases
+              Back to Press Media
             </Link>
           </div>
           
@@ -166,9 +167,7 @@ export default async function PressReleasePage({ params }: PressReleasePageProps
                 {release.category}
               </span>
               <span className="flex items-center gap-1 text-white/80 text-sm">
-                <Calendar className="h-4 w-4" />
-                {release.date}
-              </span>
+                </span>
             </div>
             
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mb-6">
@@ -178,7 +177,7 @@ export default async function PressReleasePage({ params }: PressReleasePageProps
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <p className="text-white/90 text-lg">{release.company}</p>
-                <p className="text-white/70 text-sm">Press Release</p>
+                <p className="text-white/70 text-sm">Press Media</p>
               </div>
               
               <div className="flex items-center gap-3">
@@ -249,10 +248,10 @@ export default async function PressReleasePage({ params }: PressReleasePageProps
         </div>
       </section>
 
-      {/* Related Press Releases */}
+      {/* Related Press Media */}
       <section className="px-4 py-16 sm:px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Press Releases</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Press Media</h2>
           
           <div className="grid gap-6 md:grid-cols-2">
             {pressReleases
@@ -280,10 +279,6 @@ export default async function PressReleasePage({ params }: PressReleasePageProps
                       {relatedRelease.title}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{relatedRelease.summary}</p>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <Calendar className="h-3 w-3" />
-                      {relatedRelease.date}
-                    </div>
                   </div>
                 </Link>
               ))}
@@ -312,11 +307,12 @@ export default async function PressReleasePage({ params }: PressReleasePageProps
               href="/press"
               className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-red-600 transition-colors"
             >
-              View All Press Releases
+              View All Press Media
             </Link>
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

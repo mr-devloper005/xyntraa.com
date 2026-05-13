@@ -1,34 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Mail, Phone, MapPin, Send, Globe, Users, Clock } from "lucide-react";
+import { ArrowRight, Send, Globe, Users, Clock } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
+import { Footer } from "@/components/shared/footer";
 
 export default function ContactPage() {
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      content: "support@xyntraa.com",
-      description: "Get in touch with our support team"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      content: "+1 (555) 123-4567",
-      description: "Mon-Fri 9AM-6PM EST"
-    },
-    {
-      icon: MapPin,
-      title: "Office",
-      content: "123 Business Ave, Suite 100",
-      description: "New York, NY 10001"
-    }
-  ];
-
   const services = [
     {
       icon: Globe,
-      title: "Press Release Distribution",
+      title: "Press Media Distribution",
       description: "Get your news distributed to thousands of media outlets worldwide."
     },
     {
@@ -56,17 +36,8 @@ export default function ContactPage() {
                 Get in Touch
               </h1>
               <p className="mt-6 text-lg leading-8 text-red-100">
-                Have questions about press release distribution? We're here to help you amplify your message and reach your audience.
+                Have questions about press media distribution? We're here to help you amplify your message and reach your audience.
               </p>
-              <div className="mt-8">
-                <Link 
-                  href="mailto:support@xyntraa.com"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-medium text-red-600 hover:bg-gray-100 transition-colors"
-                >
-                  Email Us
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
             </div>
             <div className="lg:order-2">
               <div className="relative h-96 rounded-2xl overflow-hidden">
@@ -78,27 +49,6 @@ export default function ContactPage() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Info Section */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-3">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon
-              return (
-                <div key={index} className="text-center">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-600 mb-6">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{info.title}</h3>
-                  <p className="text-lg text-gray-600 mb-1">{info.content}</p>
-                  <p className="text-sm text-gray-500">{info.description}</p>
-                </div>
-              )
-            })}
           </div>
         </div>
       </section>
@@ -192,7 +142,7 @@ export default function ContactPage() {
               How We Can Help
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Expert support for all your press release distribution needs
+              Expert support for all your press media distribution needs
             </p>
           </div>
           
@@ -220,16 +170,9 @@ export default function ContactPage() {
             Ready to Get Started?
           </h2>
           <p className="mt-4 text-lg text-red-100">
-            Join thousands of companies using Xyntraa for professional press release distribution
+            Join thousands of companies using Xyntraa for professional press media distribution
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link 
-              href="/pricing"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-medium text-red-600 hover:bg-gray-100 transition-colors"
-            >
-              View Pricing
-              <ArrowRight className="h-4 w-4" />
-            </Link>
             <Link 
               href="/register"
               className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-red-600 transition-colors"
@@ -239,6 +182,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

@@ -12,8 +12,7 @@ export function SiteHeader() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Press Releases', href: '/press' },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'Press Media', href: '/press' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ]
