@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, FileText, Shield, Users, Globe } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
+import { Footer } from "@/components/shared/footer";
 
 export default function TermsPage() {
   const sections = [
@@ -17,17 +18,17 @@ export default function TermsPage() {
     },
     {
       title: "Content Ownership",
-      body: "You own the content you publish and grant the platform a license to display it. By submitting press releases, you retain ownership of your content while allowing us to distribute it.",
+      body: "You own the content you publish and grant the platform a license to display it. By submitting press media, you retain ownership of your content while allowing us to distribute it.",
       details: [
         "You retain all rights to your original content",
-        "You grant us a license to distribute your press releases",
+        "You grant us a license to distribute your press media",
         "You are responsible for the accuracy of your content",
         "We may remove content that violates our policies"
       ]
     },
     {
       title: "Acceptable Use",
-      body: "No spam, harassment, or illegal content. Our platform is designed for professional press release distribution and business communications.",
+      body: "No spam, harassment, or illegal content. Our platform is designed for professional press media distribution and business communications.",
       details: [
         "Submit only legitimate business announcements",
         "Do not post misleading or false information",
@@ -79,7 +80,7 @@ export default function TermsPage() {
                 Terms of Service
               </h1>
               <p className="mt-6 text-lg leading-8 text-red-100">
-                The rules and guidelines for using Xyntraa's press release distribution platform.
+                The rules and guidelines for using Xyntraa's press media distribution platform.
               </p>
               <div className="mt-8">
                 <Link 
@@ -174,6 +175,7 @@ export default function TermsPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

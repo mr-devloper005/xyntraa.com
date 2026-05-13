@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Users, Globe, BarChart3, CheckCircle, Target, Zap, Shield } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
+import { Footer } from "@/components/shared/footer";
 
 export default function AboutPage() {
   const stats = [
@@ -34,7 +35,7 @@ export default function AboutPage() {
       name: "Sarah Johnson",
       role: "CEO & Founder",
       bio: "Former PR executive with 15+ years of experience in media relations and corporate communications.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b332c1ca?w=150&h=150&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=center"
     },
     {
       name: "Michael Chen",
@@ -211,15 +212,11 @@ export default function AboutPage() {
               Get Started
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link 
-              href="/pricing"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-red-600 transition-colors"
-            >
-              View Pricing
-            </Link>
+
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

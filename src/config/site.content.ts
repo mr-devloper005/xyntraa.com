@@ -8,22 +8,22 @@ export const siteContent = {
     tagline: 'Reach millions online and via traditional media',
   },
   hero: {
-    badge: 'Press Release Distribution',
+    badge: 'Press Media Distribution',
     title: ['Distribute your news everywhere'],
     description:
       'Reach millions online and via traditional media with our comprehensive press release distribution platform.',
     primaryCta: {
-      label: 'Submit Press Release',
+      label: 'Submit Press Media',
       href: '/contact',
     },
     secondaryCta: {
       label: 'Post Your Profile',
       href: '/contact',
     },
-    searchPlaceholder: 'Search press releases',
+    searchPlaceholder: 'Search press media',
     focusLabel: 'Latest',
     featureCardBadge: 'media distribution',
-    featureCardTitle: 'Boost your business with strategic press release distribution.',
+    featureCardTitle: 'Boost your business with strategic press media distribution.',
     featureCardDescription:
       'Get your news in front of journalists, media outlets, and millions of potential customers worldwide.',
   },
