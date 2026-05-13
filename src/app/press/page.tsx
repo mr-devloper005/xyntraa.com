@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from "next/link";
 import { ArrowRight, Download, Eye, Calendar, Globe, FileText } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
+import { Footer } from "@/components/shared/footer";
 import { mockPressAssets, mockPressCoverage } from '@/data/mock-data'
 
 export default function PressPage() {
@@ -172,12 +173,12 @@ export default function PressPage() {
         </div>
       )}
 
-      {/* Press Releases Section */}
+      {/* Press Media Section */}
       <section className="px-4 py-20 sm:px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Latest Press Releases
+              Latest Press Media
             </h2>
             <p className="mt-4 text-lg text-gray-600">
               Stay updated with our latest announcements and company news.
@@ -185,7 +186,7 @@ export default function PressPage() {
           </div>
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Press Release 1 */}
+            {/* Press Media 1 */}
             <Link href="/press/global-tech-leader-announces-revolutionary-ai-platform" className="group rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all">
               <div className="relative h-48">
                 <Image
@@ -206,13 +207,11 @@ export default function PressPage() {
                   Introduction to Advanced AI Technology Artificial intelligence represents a fundamental shift in how enterprises operate and make decisions.
                 </p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <Calendar className="h-3 w-3" />
-                  2 hours ago
                 </div>
               </div>
             </Link>
 
-            {/* Press Release 2 */}
+            {/* Press Media 2 */}
             <Link href="/press/healthcare-innovation-breakthrough-new-treatment-shows-promise" className="group rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all">
               <div className="relative h-48">
                 <Image
@@ -233,13 +232,11 @@ export default function PressPage() {
                   Revolutionary medical treatment offers new hope for patients worldwide with unprecedented success rates in clinical trials.
                 </p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <Calendar className="h-3 w-3" />
-                  5 hours ago
                 </div>
               </div>
             </Link>
 
-            {/* Press Release 3 */}
+            {/* Press Media 3 */}
             <Link href="/press/sustainable-energy-initiative-launched-by-global-consortium" className="group rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all">
               <div className="relative h-48">
                 <Image
@@ -260,8 +257,6 @@ export default function PressPage() {
                   Major international partnership aims to accelerate transition to renewable energy sources with $10 billion investment commitment.
                 </p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <Calendar className="h-3 w-3" />
-                  1 day ago
                 </div>
               </div>
             </Link>
@@ -295,6 +290,7 @@ export default function PressPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }

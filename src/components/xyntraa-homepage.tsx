@@ -72,7 +72,7 @@ export function XyntraaHomepage() {
             {/* Left Side */}
             <div className="text-white">
               <div className="inline-flex items-center rounded-full bg-white/20 px-3 py-1 text-sm font-semibold text-white">
-                Press release distribution
+                Press media distribution
               </div>
               <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Reach journalists, readers, and search with wire-ready announcements.
@@ -102,7 +102,7 @@ export function XyntraaHomepage() {
               <div className="relative h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="https://img.magnific.com/free-photo/documents-paperwork-business-strategy-concept_53876-120383.jpg"
-                  alt="Press release distribution"
+                  alt="Press media distribution"
                   fill
                   className="object-cover"
                 />
@@ -147,7 +147,7 @@ export function XyntraaHomepage() {
               Our Services
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Comprehensive press release distribution solutions for every need
+              Comprehensive press media distribution solutions for every need
             </p>
           </div>
           
@@ -425,12 +425,6 @@ export function XyntraaHomepage() {
             Ready to put your next launch on the wire?
           </h2>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link 
-              href="/pricing"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-medium text-red-600 hover:bg-gray-100 transition-colors"
-            >
-              Compare plans
-            </Link>
             <Link 
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-red-600 transition-colors"
