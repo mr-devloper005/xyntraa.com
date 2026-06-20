@@ -1,21 +1,16 @@
-﻿'use client'
-
-import { useState } from 'react'
-import Image from 'next/image'
+﻿import Image from 'next/image'
 import Link from "next/link";
-import { ArrowRight, Download, Eye, Calendar, Globe, FileText } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
 import { Footer } from "@/components/shared/footer";
-import { mockPressAssets, mockPressCoverage } from '@/data/mock-data'
+import { mockPressCoverage } from '@/data/mock-data'
+import { PressKitClient } from './press-kit-client'
 
 export default function PressPage() {
-  const [activeAssetId, setActiveAssetId] = useState<string | null>(null)
-  const activeAsset = mockPressAssets.find((asset) => asset.id === activeAssetId)
-
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
-      
+
       {/* Hero Section */}
       <section className="bg-red-600 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -28,7 +23,7 @@ export default function PressPage() {
                 Access our press kit, brand assets, and latest news coverage. Everything you need for media coverage and brand partnerships.
               </p>
               <div className="mt-8">
-                <Link 
+                <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-medium text-red-600 hover:bg-gray-100 transition-colors"
                 >
@@ -62,41 +57,10 @@ export default function PressPage() {
               Download logos, product screenshots, and brand guidelines for media use.
             </p>
           </div>
-          
+
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-              <div className="space-y-4">
-                {mockPressAssets.map((asset) => (
-                  <div key={asset.id} className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                      <div>
-                        <p className="text-sm font-medium text-gray-900">{asset.title}</p>
-                        <p className="text-xs text-gray-600">{asset.description}</p>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="inline-flex items-center rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-600">
-                          {asset.fileType}
-                        </span>
-                        <button
-                          onClick={() => setActiveAssetId(asset.id)}
-                          className="inline-flex items-center gap-1 rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-                        >
-                          <Eye className="h-3 w-3" />
-                          Preview
-                        </button>
-                        <button
-                          className="inline-flex items-center gap-1 rounded-lg bg-red-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-red-700 transition-colors"
-                        >
-                          <Download className="h-3 w-3" />
-                          Download
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
+            <PressKitClient />
+
             <div className="space-y-4">
               {mockPressCoverage.map((item) => (
                 <div key={item.id} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-all">
@@ -109,10 +73,6 @@ export default function PressPage() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-semibold uppercase tracking-wide text-red-600">{item.outlet}</span>
-                        <span className="text-xs text-gray-500 flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          {item.date}
-                        </span>
                       </div>
                       <p className="text-sm text-gray-900 leading-relaxed">{item.headline}</p>
                     </div>
@@ -123,55 +83,6 @@ export default function PressPage() {
           </div>
         </div>
       </section>
-
-      {/* Preview Modal */}
-      {activeAsset && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="max-w-3xl w-full bg-white rounded-2xl shadow-xl">
-            <div className="p-6 border-b border-gray-200">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-gray-900">{activeAsset.title}</h3>
-                <button
-                  onClick={() => setActiveAssetId(null)}
-                  className="inline-flex items-center justify-center rounded-lg p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100"
-                >
-                  <span className="sr-only">Close</span>
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div className="p-6">
-              {activeAsset.previewUrl && (
-                <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-gray-200 bg-gray-50 mb-4">
-                  <Image
-                    src={activeAsset.previewUrl}
-                    alt={activeAsset.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              )}
-              <p className="text-sm text-gray-600 mb-6">{activeAsset.description}</p>
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setActiveAssetId(null)}
-                  className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-                >
-                  Close
-                </button>
-                <button
-                  className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors"
-                >
-                  <Download className="h-4 w-4" />
-                  Download {activeAsset.fileType}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Press Media Section */}
       <section className="px-4 py-20 sm:px-6 lg:px-8 bg-gray-50">
@@ -184,7 +95,7 @@ export default function PressPage() {
               Stay updated with our latest announcements and company news.
             </p>
           </div>
-          
+
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* Press Media 1 */}
             <Link href="/press/global-tech-leader-announces-revolutionary-ai-platform" className="group rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all">
@@ -203,11 +114,9 @@ export default function PressPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                   Global Tech Leader Announces Revolutionary AI Platform
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Introduction to Advanced AI Technology Artificial intelligence represents a fundamental shift in how enterprises operate and make decisions.
                 </p>
-                <div className="flex items-center gap-2 text-sm text-gray-500">
-                </div>
               </div>
             </Link>
 
@@ -228,11 +137,9 @@ export default function PressPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                   Healthcare Innovation Breakthrough: New Treatment Shows Promise
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Revolutionary medical treatment offers new hope for patients worldwide with unprecedented success rates in clinical trials.
                 </p>
-                <div className="flex items-center gap-2 text-sm text-gray-500">
-                </div>
               </div>
             </Link>
 
@@ -253,11 +160,9 @@ export default function PressPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                   Sustainable Energy Initiative Launched by Global Consortium
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Major international partnership aims to accelerate transition to renewable energy sources with $10 billion investment commitment.
                 </p>
-                <div className="flex items-center gap-2 text-sm text-gray-500">
-                </div>
               </div>
             </Link>
           </div>
@@ -274,18 +179,12 @@ export default function PressPage() {
             Our PR team is ready to help with your media inquiries and press coverage needs.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link 
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-medium text-red-600 hover:bg-gray-100 transition-colors"
             >
               Contact PR Team
               <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link 
-              href="/pricing"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-red-600 transition-colors"
-            >
-              View Services
             </Link>
           </div>
         </div>
